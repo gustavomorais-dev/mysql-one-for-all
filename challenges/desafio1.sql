@@ -45,7 +45,9 @@ CREATE TABLE musics_details (
     music_title VARCHAR(100) NOT NULL,
     duration_seconds INT,
     album_id INT,
-    FOREIGN KEY (album_id) REFERENCES albums_details(album_id)
+    artist_id INT,
+    FOREIGN KEY (album_id) REFERENCES albums_details(album_id),
+    FOREIGN KEY (artist_id) REFERENCES artists_details(artist_id)
 ) ENGINE = InnoDB;
 
 CREATE TABLE playback_history (
